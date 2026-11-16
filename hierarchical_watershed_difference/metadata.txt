@@ -1,0 +1,28 @@
+[general]
+name=Hierarchical Watershed Difference
+qgisMinimumVersion=3.34
+description=Removal of watershed intersection by hierarchical difference: delineates the watershed of each outlet and removes the overlapping areas, giving priority to watersheds with higher elevation.
+version=1.0.0
+author=Henrique Ledo Lopes Pinho, Jessica Bassani de Oliveira, Yzel Rondon Suarez
+email=geaaqua@uems.br
+
+about=Processing algorithm version of the script "Removal of watershed intersection by hierarchical difference". It delineates one watershed per outlet point (GRASS r.watershed and r.water.outlet), computes the minimum elevation of each watershed from the DEM (Zonal Statistics) and runs the Difference iteratively, from the highest to the lowest minimum elevation. Watersheds that contained other watersheds are reduced, so the final polygons (areas of influence) have no overlapping areas. Inputs: DEM (.tif), outlet coordinates (.txt, x,y) and collected points (.shp with a "Points" column). Outputs: intermediary files folder and final polygons folder with influence_area_[Point].shp.
+
+    Requirements: GRASS GIS provider enabled in Processing (bundled with the standard QGIS installers on Windows; on Linux, install the GRASS package and the QGIS GRASS plugin). The DEM must be pre-processed (filled, without spurious depressions or negative values) and the outlet points must lie on the pixel of the stream segment. A projected CRS (e.g. UTM) is recommended.
+
+    Developed at the Aquatic Environments Studies Laboratory (GEAAQUA), State University of Mato Grosso do Sul (UEMS), Dourados, Brazil, with support from CAPES, CNPq and Fundect.
+
+tracker=https://github.com/sintropikgeo/hierarchical-watershed-difference/issues
+repository=https://github.com/sintropikgeo/hierarchical-watershed-difference
+homepage=https://github.com/sintropikgeo/hierarchical-watershed-difference
+
+changelog=
+    1.0.0 - First release as a QGIS Processing plugin.
+
+tags=hydrology,watershed,basin,catchment,grass,dem,outlet,overlap,difference,area of influence
+category=Analysis
+icon=icon.png
+experimental=False
+deprecated=False
+hasProcessingProvider=yes
+server=False
