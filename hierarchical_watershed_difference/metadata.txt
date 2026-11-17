@@ -1,6 +1,7 @@
 [general]
 name=Hierarchical Watershed Difference
 qgisMinimumVersion=3.34
+qgisMaximumVersion=4.99
 description=Removal of watershed intersection by hierarchical difference: delineates the watershed of each outlet and removes the overlapping areas, giving priority to watersheds with higher elevation.
 version=1.0.0
 author=Henrique Ledo Lopes Pinho, Jessica Bassani de Oliveira, Yzel Rondon Suarez
